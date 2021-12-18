@@ -1,0 +1,54 @@
+h1 {
+    width: 497px;
+    height: 76px;
+    margin: 81px 123px;
+    font-family: Rubik;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 64px;
+    line-height: 76px;
+    color: #000000;
+}
+
+.header-container {
+    display: flex;
+    margin-top: 74px;
+    gap: 10px;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.header-container__input input{
+    margin-top: 5px;
+    min-width: 468px;
+}
+
+.header-container__select select {
+    margin-top: 5px;
+    min-width: 466px;
+}
+
+.header-container__clearSort {
+    margin-top: 15px;
+}
+
+.header-container__clearSort span {
+    margin-left: 5px;
+    cursor: pointer;
+
+}
+
+.header-container__clearSort p {
+    font-family: Formular;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    color: #A3A6A9;
+}
+
+.header-container__select p, .header-container__input p {
+    font-family: Rubik;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+}

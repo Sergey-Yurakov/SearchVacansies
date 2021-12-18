@@ -1,0 +1,107 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.main-container {
+    display: flex;
+    flex-direction: column;
+    margin: 39px 0 39px 0;
+    gap: 24px;
+}
+
+.main-container__section {
+    display: flex;
+    border: 1px solid black;
+    width: 70%;
+    min-height: 350px;
+    margin: auto;
+} 
+
+.main-container__section__left {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    min-width: 40%;
+    margin-right: 10px;
+    
+}
+
+.main-container__section__left__text p {
+    margin: 10px 5px;
+}
+
+.main-container__section__left__text span {
+    font-family: Rubik;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 140%;
+    color: #545454; 
+}
+
+.main-container__section__left__img {
+    max-width: 40%;
+    
+}
+
+.main-container__section__left__img img {
+    object-fit: cover;
+    width: 100%;
+    margin-left: 10px;
+}
+
+h2 {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 32px;
+    line-height: 160%;
+    text-align: center;
+    margin: 10px 0;
+}
+
+.main-container__section__right__text {
+    font-family: Roboto;
+    font-size: 16px;
+    line-height: 40px;
+    width: 90%;
+    height: 80px;
+    color: #000000;
+    overflow: hidden;
+    position: relative;
+}
+
+.main-container__section__right div button {
+    border: none;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 140%;
+    color: #A3A6A9;
+    cursor: pointer;
+}
+
+.main-container__section__right__butt {
+    text-align: center;
+}
+
+.main-container__section__right__text:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 30%;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0) -59.32%, #FFFFFF 42.84%);
+}
+
+.main-container__section__text__close {
+    font-family: Roboto;
+    font-size: 16px;
+    line-height: 40px;
+    color: #000000;
+    position: relative;
+    width: 90%;
+}
