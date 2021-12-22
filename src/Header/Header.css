@@ -1,7 +1,6 @@
+
 h1 {
-    width: 497px;
-    height: 76px;
-    margin: 81px 123px;
+    margin: 81px 0;
     font-family: Rubik;
     font-style: normal;
     font-weight: normal;
@@ -14,19 +13,46 @@ h1 {
     display: flex;
     margin-top: 74px;
     gap: 10px;
-    justify-content: space-around;
+    justify-content: space-between;
     flex-wrap: wrap;
 }
 
 .header-container__input input{
     margin-top: 5px;
-    min-width: 468px;
+    width: 50vh;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid black;
+    font-family: Rubik;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 160%;
+    color: #A3A6A9;
+
 }
 
-.header-container__select select {
-    margin-top: 5px;
-    min-width: 466px;
+.header-container__select {
+    position: relative;
+    width: 50vh;
+    border-bottom: solid 1px black;
+} 
+
+.header-container__select select::after {
+    content: "";
+    display: block;
+    border-style: solid;
+    border-width: 6px 5px 0 5px;
+    border-color: #000 transparent transparent transparent; 
+    pointer-events: none;
+    position: absolute; 
+    top: 50%; 
+    right: 1rem; 
+    z-index: 1; 
+     margin-top: -3px; 
+    transform: matrix(1, 0, 0, -1, 0, 0);
 }
+
 
 .header-container__clearSort {
     margin-top: 15px;
@@ -43,6 +69,8 @@ h1 {
     font-style: normal;
     font-weight: normal;
     font-size: 16px;
+    line-height: 160%;
+    text-align: right;
     color: #A3A6A9;
 }
 
@@ -51,4 +79,59 @@ h1 {
     font-style: normal;
     font-weight: normal;
     font-size: 16px;
+}
+
+.header-container__select__header {
+    margin-top: 5px;
+    display: flex;
+    cursor: pointer;
+}
+
+.is-active .header-container__select__body {
+    display: block;
+}
+
+.is-active .header-container__select__header__icon {
+    transform: matrix(-1, 0, 0, 1, 0, 0);
+}
+
+
+.header-container__select__header__icon {
+    margin-left: auto;
+    transform: matrix(1, 0, 0, -1, 0, 0);
+}
+
+.header-container__select__header {
+    font-family: Rubik;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 160%;
+    color: #A3A6A9;
+}
+
+.header-container__select__body {
+    font-family: Rubik;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 160%;
+    color: #000000;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 100%;
+    display: none;
+    background-color: rgba(247, 247, 247, 0.41);
+    
+}
+
+.header-container__select__body__item {
+    cursor: pointer;
+    padding-top: 15px;
+    
+}
+
+.header-container__select__body__item:hover {
+    background-color: #f2f2f2;
 }

@@ -25,6 +25,7 @@ function Main() {
             });
     }, []);
 
+
     const clickHandler = (e) => {
         //Ищем текущую кнопку по ключу и меняем текст внутри
         if(e.target.innerHTML === 'more details') {
@@ -53,10 +54,11 @@ function Main() {
         })
     }
 
+
     return(
         <div className='main-container'>
            {
-               data.map( item => {
+            data.map( item => {
                     return <div className='main-container__section' key={item.id}>
 
                         <div className='main-container__section__left'>
@@ -98,7 +100,7 @@ function Main() {
                     </div>
 
                 })}
-            
+               
         </div>
     );
 }

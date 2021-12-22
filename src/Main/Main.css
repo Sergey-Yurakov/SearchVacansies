@@ -1,7 +1,3 @@
-*{
-    margin: 0;
-    padding: 0;
-}
 
 .main-container {
     display: flex;
@@ -13,10 +9,8 @@
 .main-container__section {
     display: flex;
     border: 1px solid black;
-    width: 70%;
     min-height: 350px;
-    margin: auto;
-} 
+}
 
 .main-container__section__left {
     display: flex;
@@ -81,10 +75,12 @@ h2 {
     line-height: 140%;
     color: #A3A6A9;
     cursor: pointer;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0) -59.32%, #FFFFFF 42.84%);
 }
 
 .main-container__section__right__butt {
     text-align: center;
+    margin: 5px 0;
 }
 
 .main-container__section__right__text:after {
@@ -105,3 +101,4 @@ h2 {
     position: relative;
     width: 90%;
 }
+
