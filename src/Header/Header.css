@@ -1,137 +1,81 @@
+/*Задаем ширину контейнера*/
+.header {
+    max-width: 1196px;
+    margin: 81px auto 39px;
+}
 
-h1 {
-    margin: 81px 0;
+/*Описываем шрифты*/
+.header__title {
     font-family: Rubik;
     font-style: normal;
     font-weight: normal;
     font-size: 64px;
     line-height: 76px;
     color: #000000;
+    margin-bottom: 74px;
 }
 
-.header-container {
+.text {
+    font-family: Rubik;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 160%;
+}
+
+.text_grey {
+    color: #A3A6A9;
+}
+
+/*Работаем с body*/
+.header__body {
     display: flex;
-    margin-top: 74px;
-    gap: 10px;
     justify-content: space-between;
-    flex-wrap: wrap;
+    margin: 0;
+    padding: 0;
 }
 
-.header-container__input input{
-    margin-top: 5px;
-    width: 50vh;
-    outline: none;
+.input {
     border: none;
-    border-bottom: 1px solid black;
-    font-family: Rubik;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 16px;
-    line-height: 160%;
-    color: #A3A6A9;
-
-}
-
-.header-container__select {
-    position: relative;
-    width: 50vh;
     border-bottom: solid 1px black;
-} 
+    min-width: 466px;
+    margin: 0;
+    padding: 0;
+}
 
-.header-container__select select::after {
-    content: "";
-    display: block;
-    border-style: solid;
-    border-width: 6px 5px 0 5px;
-    border-color: #000 transparent transparent transparent; 
-    pointer-events: none;
-    position: absolute; 
-    top: 50%; 
-    right: 1rem; 
-    z-index: 1; 
-     margin-top: -3px; 
-    transform: matrix(1, 0, 0, -1, 0, 0);
+.header__input {
+    margin-left: -70px;
 }
 
 
-.header-container__clearSort {
-    margin-top: 15px;
+.header__select__title, .header__input__title {
+    margin-bottom: 11px;
 }
 
-.header-container__clearSort span {
-    margin-left: 5px;
-    cursor: pointer;
-
+.header__input__input, .header__select__select {
+    padding-bottom: 7px;
 }
 
-.header-container__clearSort p {
-    font-family: Formular;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 16px;
-    line-height: 160%;
-    text-align: right;
-    color: #A3A6A9;
-}
-
-.header-container__select p, .header-container__input p {
-    font-family: Rubik;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 16px;
-}
-
-.header-container__select__header {
-    margin-top: 5px;
-    display: flex;
+.header__select__select {
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
     cursor: pointer;
 }
 
-.is-active .header-container__select__body {
-    display: block;
+.header__select__select:not([multiple]) {
+    background-repeat: no-repeat;
+    background-position: calc(100% - 0.25em) 0.35em;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='20' height='9' viewBox='0 0 20 9' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M10 9L19.5263 0H0.473721L10 9Z' fill='black'/%3e%3c/svg%3e ");
 }
 
-.is-active .header-container__select__header__icon {
-    transform: matrix(-1, 0, 0, 1, 0, 0);
+.header__sort {
+    margin: 36px 0 18px 0;
 }
 
-
-.header-container__select__header__icon {
-    margin-left: auto;
-    transform: matrix(1, 0, 0, -1, 0, 0);
-}
-
-.header-container__select__header {
-    font-family: Rubik;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 16px;
-    line-height: 160%;
-    color: #A3A6A9;
-}
-
-.header-container__select__body {
-    font-family: Rubik;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 16px;
-    line-height: 160%;
-    color: #000000;
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 100%;
-    display: none;
-    background-color: rgba(247, 247, 247, 0.41);
-    
-}
-
-.header-container__select__body__item {
+.header__sort__text {
     cursor: pointer;
-    padding-top: 15px;
-    
 }
 
-.header-container__select__body__item:hover {
-    background-color: #f2f2f2;
-}
+
+
