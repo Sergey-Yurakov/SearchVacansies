@@ -172,9 +172,10 @@
     }
     .main__sections__column-left {
         align-items: center;
+        margin-bottom: 0;
     }
     .main__sections__text-left {
-        margin: -16px 11px 16px 20px;
+        margin: -16px 11px 0 0 ;
     }
     .main__sections__column-right {
         margin: 16px 11px 16px 20px;
@@ -190,6 +191,9 @@
     }
     .main__sections__icons {
         max-width: 50%;
+    }
+    .text-left_margin-top {
+       margin: 0 auto 17px;
     }
 }
 
