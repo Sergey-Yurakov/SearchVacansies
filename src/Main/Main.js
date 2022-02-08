@@ -1,6 +1,6 @@
-import './Main.css';
+import './Main.scss';
 
-import React, {useEffect, useState} from "react";
+import React, { useEffect, useState } from "react";
 
 function Main() {
 
@@ -10,7 +10,7 @@ function Main() {
     //This refs
     let refs = React.createRef();
 
-    //Создал массив для рефов, чтобы потом его перебрать найти текущий
+    //Создал массив для рефов, чтобы потом его перебрать и найти текущий
     let nameClass = [];
 
     useEffect(() => {
@@ -19,7 +19,7 @@ function Main() {
                 if (!response.ok) throw Error(response.statusText);
                 return response.json();
             })
-            .then(data => setData((data.items).slice(0,5)))
+            .then(data => setData((data.items).slice(0, 5)))
             .catch(error => {
                 console.log("error", error);
             });
@@ -27,7 +27,7 @@ function Main() {
 
     const clickHandler = (e) => {
         //Ищем текущую кнопку по ключу и меняем текст внутри
-        if(e.target.innerHTML === 'more details') {
+        if (e.target.innerHTML === 'more details') {
             e.target.innerHTML = 'close';
         }
         else {
@@ -53,14 +53,14 @@ function Main() {
         })
     }
 
-    return(
-        <div className='main'>
+    return (
+        <main className='main'>
             {
                 data.map(item => {
-                    return <div className='main__sections' key={item.id}>
-                        <div className="main__sections__column-left">
+                    return <article className='main__sections' key={item.id}>
+                        <section className="main__sections__column-left">
                             <div className="main__sections__icons">
-                                <img src={item.employer.logo_urls['240']} alt='Логотип компании' className='main__sections__logo'/>
+                                <img src={item.employer.logo_urls['240']} alt='Логотип компании' className='main__sections__logo' />
                             </div>
                             <div className="main__sections__text-left">
                                 <div className='text-left_margin-top'>
@@ -76,26 +76,26 @@ function Main() {
                                     {item.area.name}
                                 </div>
                             </div>
-                        </div>
+                        </section>
 
-                        <div className="main__sections__column-right">
-                            <div className="main__sections__title">
+                        <section className="main__sections__column-right">
+                            <h2 className="main__sections__title">
                                 {item.name}
-                            </div>
+                            </h2>
                             <div className="main__sections__text-body">
-                                <div className="main__sections__text-right" data-text = {item.id} ref={(refs) => {nameClass.push(refs)}}>
+                                <p className="main__sections__text-right" data-text={item.id} ref={(refs) => { nameClass.push(refs) }}>
                                     {item.snippet.requirement}
                                     {item.snippet.responsibility}
-                                </div>
+                                </p>
                                 <div className="main__sections__but-right">
                                     <button className='but-right__button' data-key={item.id} onClick={clickHandler}>more details</button>
                                 </div>
                             </div>
-                        </div>
-                    </div>
+                        </section>
+                    </article>
                 })
             }
-        </div>
+        </main>
     );
 }
 
