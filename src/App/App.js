@@ -1,4 +1,5 @@
 import './App.scss';
+import '../scss/base.scss';
 
 import Header from "../Header/Header";
 import Main from "../Main/Main";

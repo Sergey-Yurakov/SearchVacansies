@@ -37,13 +37,13 @@ function Main() {
         //Проходим циклом по массиву с рефами и находим текущий по ключу
         nameClass.forEach(item => {
             if (e.target.dataset.key === item.dataset.text) {
-                if (item.classList.contains('main__sections__text-right')) {
-                    item.classList.remove('main__sections__text-right')
-                    item.classList.add('main__sections__text-right_close');
+                if (item.classList.contains('main__sections_text-right')) {
+                    item.classList.remove('main__sections_text-right')
+                    item.classList.add('main__sections_text-right_close');
                 }
                 else {
-                    item.classList.remove('main__sections__text-right_close')
-                    item.classList.add('main__sections__text-right');
+                    item.classList.remove('main__sections_text-right_close')
+                    item.classList.add('main__sections_text-right');
                 }
             }
             else {
@@ -79,11 +79,11 @@ function Main() {
                         </section>
 
                         <section className="main__sections__column-right">
-                            <h2 className="main__sections__title">
+                            <h2 className="main__sections-title">
                                 {item.name}
                             </h2>
                             <div className="main__sections__text-body">
-                                <p className="main__sections__text-right" data-text={item.id} ref={(refs) => { nameClass.push(refs) }}>
+                                <p className="main__sections_text-right" data-text={item.id} ref={(refs) => { nameClass.push(refs) }}>
                                     {item.snippet.requirement}
                                     {item.snippet.responsibility}
                                 </p>

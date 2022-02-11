@@ -1,13 +1,15 @@
+@import "../scss/gs.scss";
+
 // Описываем позиционирование контейнеров
 .main {
-    max-width: 1196px;
-    margin: 0 auto 30px;
+    margin-bottom: 30px;
     display: flex;
     flex-direction: column;
     gap: 24px;
 
     @media (max-width: 1200px) {
         width: 80%;
+        margin: 0 auto;
     }
 }
 
@@ -65,8 +67,8 @@
     font-style: normal;
     font-weight: normal;
     font-size: 16px;
-    line-height: 140%;
-    color: #000000;
+    line-height: 22px;
+    color: $color-black;
 
     @media (max-width: 800px) {
         margin: -16px 11px 16px 20px;
@@ -78,7 +80,7 @@
 }
 
 .text-left_gray {
-    color: #545454;
+    color: $color-545454;
 }
 
 .text-left_margin-top {
@@ -89,35 +91,26 @@
     }
 }
 
-.main__sections__title {
-    font-family: Roboto;
-    font-style: normal;
-    font-weight: normal;
+.main__sections-title {
     font-size: 32px;
     line-height: 160%;
-    color: #000000;
+    color: $color-black;
     margin: 20px 0 8px 0;
 
     @media (max-width: 590px) {
         margin-bottom: 16px;
-        font-family: Roboto;
-        font-style: normal;
-        font-weight: normal;
         font-size: 22px;
-        line-height: 160%;
-        color: #000000;
+        line-height: 51px;
+        color: $color-black;
     }
 }
 
-.main__sections__text-right {
+.main__sections_text-right {
     margin: 8px 21px 5px 0;
-    font-family: Roboto;
-    font-style: normal;
-    font-weight: normal;
     font-size: 16px;
-    line-height: 140%;
-    color: #000000;
-    height: 70px;
+    line-height: 22px;
+    color: $color-black;
+    height: $gs * 8;
     overflow: hidden;
     position: relative;
 
@@ -138,24 +131,20 @@
 
 .but-right__button {
     border: none;
-    font-family: Roboto;
-    font-style: normal;
-    font-weight: normal;
     font-size: 16px;
-    line-height: 140%;
+    line-height: 22px;
     text-align: center;
-    color: #a3a6a9;
+    color: $color-a3a6a9;
     cursor: pointer;
     background: linear-gradient(180deg, rgba(255, 255, 255, 0) -59.32%, #ffffff 42.84%);
     margin-bottom: 5px;
 }
 
-.main__sections__text-right_close {
+.main__sections_text-right_close {
     margin: 8px 21px 5px 0;
-    font-family: Roboto;
     font-size: 16px;
-    line-height: 140%;
-    color: #000000;
+    line-height: 22px;
+    color: $color-black;
     position: relative;
     word-wrap: break-word;
 }

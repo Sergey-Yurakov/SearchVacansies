@@ -1,7 +1,9 @@
+@import "../scss/gs.scss";
+
 // Задаем ширину контейнера и описываем шрифты
 .header {
-    max-width: 1196px;
-    margin: 81px auto 39px;
+    margin-top: 81px;
+    margin-bottom: 39px;
 
     &__title {
         font-family: Rubik;
@@ -9,7 +11,7 @@
         font-weight: normal;
         font-size: 64px;
         line-height: 76px;
-        color: #000000;
+        color: $color-black;
         margin-bottom: 74px;
 
         @media (max-width: 800px) {
@@ -24,19 +26,14 @@
 
     @media (max-width: 1200px) {
         width: 80%;
+        margin: 0 auto;
     }
 }
 
 .text {
-    font-family: Rubik;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 16px;
-    line-height: 160%;
-
     &_grey,
     &::placeholder {
-        color: #a3a6a9;
+        color: $color-a3a6a9;
     }
 }
 
@@ -50,30 +47,30 @@
     @media (max-width: 1200px) {
         flex-direction: column;
     }
+    @media (max-width: 590px) {
+        margin-bottom: 32px;
+    }
 }
 
 .input {
+    font-family: Rubik;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 26px;
     border: none;
     border-bottom: solid 1px black;
-    min-width: 466px;
+    width: $gs * 58;
     margin: 0;
     padding: 0;
 
     @media (max-width: 1200px) {
         width: 100%;
     }
-
-    @media (max-width: 590px) {
-        min-width: 80%;
-    }
 }
 
 .header__input {
-    margin-left: -70px;
-
-    &__input {
-        padding-bottom: 7px;
-    }
+    padding-bottom: 7px;
 
     &__title {
         margin-bottom: 11px;
@@ -92,25 +89,28 @@
     }
 }
 
-.header__select__title {
-    margin-bottom: 11px;
-
-    @media (max-width: 590px) {
-        margin-bottom: 5px;
-    }
-}
-
-.header__select__select {
+.header__select {
     padding-bottom: 7px;
-    -moz-appearance: none;
-    -webkit-appearance: none;
-    appearance: none;
-    cursor: pointer;
 
-    &:not([multiple]) {
-        background-repeat: no-repeat;
-        background-position: calc(100% - 0.25em) 0.35em;
-        background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='20' height='9' viewBox='0 0 20 9' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M10 9L19.5263 0H0.473721L10 9Z' fill='black'/%3e%3c/svg%3e ");
+    &__title {
+        margin-bottom: 11px;
+
+        @media (max-width: 590px) {
+            margin-bottom: 5px;
+        }
+    }
+
+    &__select {
+        -moz-appearance: none;
+        -webkit-appearance: none;
+        appearance: none;
+        cursor: pointer;
+
+        &:not([multiple]) {
+            background-repeat: no-repeat;
+            background-position: calc(100% - 0.25em) 0.35em;
+            background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='20' height='9' viewBox='0 0 20 9' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M10 9L19.5263 0H0.473721L10 9Z' fill='black'/%3e%3c/svg%3e ");
+        }
     }
 }
 

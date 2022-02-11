@@ -26,7 +26,7 @@ function Header() {
                         <label htmlFor="input" className="text">Position</label>
                     </div>
                     <div className="header__input__body">
-                        <input name="input" placeholder="Unspecified" className="input text text_grey header__input__input" />
+                        <input name="input" placeholder="Unspecified" className="input text text_grey" />
                     </div>
                 </div>
                 <div className="header__sort">
