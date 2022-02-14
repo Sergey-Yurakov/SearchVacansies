@@ -1,58 +1,60 @@
-@import "../scss/gs.scss";
+@import "../scss/customSetings.scss";
 
-// Задаем ширину контейнера и описываем шрифты
+//Описываем контейнер
+.wrap-header {
+    margin: $gs * 10 auto $gs * 5;
+}
+
+//Описываем хедер
 .header {
-    margin-top: 81px;
-    margin-bottom: 39px;
-
-    &__title {
-        font-family: Rubik;
-        font-style: normal;
-        font-weight: normal;
-        font-size: 64px;
-        line-height: 76px;
-        color: $color-black;
-        margin-bottom: 74px;
-
-        @media (max-width: 800px) {
-            margin: 81px 0 32px;
-        }
-
-        @media (max-width: 590px) {
-            font-size: 32px;
-            line-height: 38px;
-        }
-    }
-
     @media (max-width: 1200px) {
         width: 80%;
         margin: 0 auto;
     }
-}
 
-.text {
-    &_grey,
-    &::placeholder {
-        color: $color-a3a6a9;
+    @media (max-width: 1024px) {
+        width: 80%;
+        margin: 0 auto;
+    }
+
+    &__title {
+        color: $color-black;
+        margin-bottom: $gs * 10;
+
+        @media (max-width: 768px) {
+            margin: $gs * 10 0 $gs * 4;
+        }
+
+        @media (max-width: 640px) {
+            font-size: 32px;
+            line-height: 38px;
+        }
     }
 }
 
-// Работаем с body
-.header__body {
+.text-grey,
+.text-grey::placeholder {
+    color: $color-a3a6a9;
+}
+
+//Тело хедера
+.body {
     display: flex;
     justify-content: space-between;
     margin: 0;
     padding: 0;
 
-    @media (max-width: 1200px) {
+    @media (max-width: 1024px) {
         flex-direction: column;
+        gap: $gs * 2;
     }
-    @media (max-width: 590px) {
-        margin-bottom: 32px;
+    @media (max-width: 640px) {
+        margin-bottom: $gs * 4;
     }
 }
 
-.input {
+//Класс, который задает вид для инпута и селекта
+.inputs {
     font-family: Rubik;
     font-style: normal;
     font-weight: normal;
@@ -60,49 +62,54 @@
     line-height: 26px;
     border: none;
     border-bottom: solid 1px black;
-    width: $gs * 58;
-    margin: 0;
-    padding: 0;
-
-    @media (max-width: 1200px) {
-        width: 100%;
-    }
 }
 
-.header__input {
-    padding-bottom: 7px;
+//Блок инпута
+.input {
+    padding-bottom: $gs;
 
     &__title {
-        margin-bottom: 11px;
+        margin-bottom: $gs;
 
-        @media (max-width: 590px) {
-            margin-bottom: 5px;
+        @media (max-width: 640px) {
+            margin-bottom: $gs;
         }
     }
 
-    @media (max-width: 1200px) {
-        margin: 36px 0 0;
-    }
+    &__body input {
+        padding-bottom: $gs;
+        width: $gs * 58;
 
-    @media (max-width: 590px) {
-        margin-top: 16px;
-    }
-}
+        @media (max-width: 1200px) {
+            width: $gs * 40;
+        }
 
-.header__select {
-    padding-bottom: 7px;
-
-    &__title {
-        margin-bottom: 11px;
-
-        @media (max-width: 590px) {
-            margin-bottom: 5px;
+        @media (max-width: 1024px) {
+            width: 100%;
         }
     }
 
-    &__select {
-        -moz-appearance: none;
+    @media (max-width: 640px) {
+        margin-top: $gs * 2;
+    }
+}
+
+//блок селекта
+.select {
+    &__title {
+        margin-bottom: $gs;
+
+        @media (max-width: 640px) {
+            margin-bottom: $gs;
+        }
+    }
+
+    &__body select {
+        padding-bottom: $gs;
+        width: $gs * 58;
+
         -webkit-appearance: none;
+        -moz-appearance: none;
         appearance: none;
         cursor: pointer;
 
@@ -111,17 +118,26 @@
             background-position: calc(100% - 0.25em) 0.35em;
             background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='20' height='9' viewBox='0 0 20 9' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M10 9L19.5263 0H0.473721L10 9Z' fill='black'/%3e%3c/svg%3e ");
         }
+
+        @media (max-width: 1200px) {
+            width: $gs * 40;
+        }
+
+        @media (max-width: 1024px) {
+            width: 100%;
+        }
     }
 }
 
-.header__sort {
-    margin: 36px 0 18px 0;
+//Сортировка
+.sort {
+    margin: $gs * 4 0 $gs * 2 0;
 
     &__text {
         cursor: pointer;
     }
 
-    @media (max-width: 590px) {
-        margin-top: 19px;
+    @media (max-width: 1024px) {
+        margin: 0 0 $gs * 2 0;
     }
 }

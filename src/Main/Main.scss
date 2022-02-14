@@ -1,68 +1,64 @@
-@import "../scss/gs.scss";
+@import "../scss/customSetings.scss";
 
-// Описываем позиционирование контейнеров
+//Описываем общий контейнер
 .main {
-    margin-bottom: 30px;
     display: flex;
     flex-direction: column;
-    gap: 24px;
+    gap: $gs * 3;
 
     @media (max-width: 1200px) {
         width: 80%;
         margin: 0 auto;
     }
-}
 
-.main__sections {
-    border: solid 1px black;
-    display: flex;
-    min-height: 331px;
-
-    &__column-left {
-        min-width: 40%;
-        margin: 20px 0 20px 20px;
+    &__sections {
+        border: solid 1px black;
         display: flex;
-        flex-direction: column;
-        justify-content: space-around;
+        min-height: $gs * 41;
 
-        @media (max-width: 800px) {
-            align-items: center;
-        }
-
-        @media (max-width: 590px) {
-            align-items: center;
-            margin-bottom: 0;
+        @media (max-width: 768px) {
+            flex-direction: column;
         }
     }
 
-    &__column-right {
-        @media (max-width: 800px) {
-            margin: 16px 11px 16px 20px;
-        }
-    }
-
-    &__icons {
-        max-width: 35%;
-
-        @media (max-width: 590px) {
-            max-width: 50%;
-        }
-    }
-
-    &__logo {
-        width: 100%;
-        object-fit: cover;
-        margin-bottom: 57px;
-    }
-
-    @media (max-width: 800px) {
-        flex-direction: column;
-        justify-content: center;
+    &__sections:last-child {
+        margin-bottom: $gs * 4;
     }
 }
 
-// Описываем шрифты
-.main__sections__text-left {
+//Левая часть блока
+.column-left {
+    min-width: 40%;
+    margin: $gs * 3 0 $gs * 3 $gs * 3;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+    @media (max-width: 768px) {
+        align-items: center;
+    }
+
+    @media (max-width: 640px) {
+        margin-bottom: 0;
+        align-items: flex-start;
+    }
+}
+
+.left__icons {
+    max-width: 35%;
+
+    @media (max-width: 640px) {
+        max-width: 50%;
+    }
+}
+
+.left__logo {
+    width: 100%;
+    object-fit: cover;
+    margin-bottom: $gs * 7;
+}
+
+.left-block {
     font-family: Rubik;
     font-style: normal;
     font-weight: normal;
@@ -70,43 +66,52 @@
     line-height: 22px;
     color: $color-black;
 
-    @media (max-width: 800px) {
-        margin: -16px 11px 16px 20px;
+    @media (max-width: 768px) {
+        margin: -$gs * 2 $gs $gs * 2 $gs * 3;
     }
 
-    @media (max-width: 590px) {
-        margin: -16px 11px 0 0;
+    @media (max-width: 640px) {
+        margin: -$gs * 2 $gs 0 0;
+    }
+
+    &__text {
+        margin-top: $gs * 2;
+
+        & span {
+            color: $color-545454;
+        }
+
+        @media (max-width: 640px) {
+            margin: 0 auto $gs * 2;
+        }
     }
 }
 
-.text-left_gray {
-    color: $color-545454;
-}
-
-.text-left_margin-top {
-    margin-top: 17px;
-
-    @media (max-width: 590px) {
-        margin: 0 auto 17px;
+//Правая часть блока
+.column-right {
+    @media (max-width: 768px) {
+        margin: $gs * 2 $gs $gs * 2 $gs * 3;
     }
-}
 
-.main__sections-title {
-    font-size: 32px;
-    line-height: 160%;
-    color: $color-black;
-    margin: 20px 0 8px 0;
+    @media (max-width: 640px) {
+        margin: 0 $gs $gs * 2 $gs * 3;
+    }
 
-    @media (max-width: 590px) {
-        margin-bottom: 16px;
-        font-size: 22px;
-        line-height: 51px;
+    &__title {
         color: $color-black;
+        margin: $gs * 3 0 $gs 0;
+
+        @media (max-width: 640px) {
+            font-size: 22px;
+            line-height: 35px;
+            color: $color-black;
+            margin: 0 auto $gs * 2;
+        }
     }
 }
 
-.main__sections_text-right {
-    margin: 8px 21px 5px 0;
+.right-block__text {
+    margin: $gs $gs * 3 $gs 0;
     font-size: 16px;
     line-height: 22px;
     color: $color-black;
@@ -121,27 +126,29 @@
         bottom: 0;
         width: 100%;
         height: 30%;
-        background: linear-gradient(180deg, rgba(255, 255, 255, 0) -59.32%, #ffffff 42.84%);
+        background: $color-gradient;
     }
 }
 
-.main__sections__but-right {
+//Кнопка
+.but-wrap {
     text-align: center;
+
+    &__button {
+        border: none;
+        font-size: 16px;
+        line-height: 22px;
+        text-align: center;
+        color: $color-a3a6a9;
+        cursor: pointer;
+        background: $color-gradient;
+        margin-bottom: $gs;
+    }
 }
 
-.but-right__button {
-    border: none;
-    font-size: 16px;
-    line-height: 22px;
-    text-align: center;
-    color: $color-a3a6a9;
-    cursor: pointer;
-    background: linear-gradient(180deg, rgba(255, 255, 255, 0) -59.32%, #ffffff 42.84%);
-    margin-bottom: 5px;
-}
-
-.main__sections_text-right_close {
-    margin: 8px 21px 5px 0;
+//Toogle class
+.right-block__text_close {
+    margin: $gs $gs * 3 $gs 0;
     font-size: 16px;
     line-height: 22px;
     color: $color-black;

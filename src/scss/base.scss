@@ -2,6 +2,29 @@
     font-family: Roboto;
     font-style: normal;
     font-weight: normal;
+}
+
+.wrap-header,
+.wrap-main {
     max-width: 1196px;
+}
+
+.wrap-main {
     margin: 0 auto;
+}
+
+h1 {
+    font-family: Rubik;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 64px;
+    line-height: 76px;
+}
+
+h2 {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 32px;
+    line-height: 51px;
 }

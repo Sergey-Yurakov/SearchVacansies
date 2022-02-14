@@ -37,13 +37,13 @@ function Main() {
         //Проходим циклом по массиву с рефами и находим текущий по ключу
         nameClass.forEach(item => {
             if (e.target.dataset.key === item.dataset.text) {
-                if (item.classList.contains('main__sections_text-right')) {
-                    item.classList.remove('main__sections_text-right')
-                    item.classList.add('main__sections_text-right_close');
+                if (item.classList.contains('right-block__text')) {
+                    item.classList.remove('right-block__text')
+                    item.classList.add('right-block__text_close');
                 }
                 else {
-                    item.classList.remove('main__sections_text-right_close')
-                    item.classList.add('main__sections_text-right');
+                    item.classList.remove('right-block__text_close')
+                    item.classList.add('right-block__text');
                 }
             }
             else {
@@ -54,48 +54,50 @@ function Main() {
     }
 
     return (
-        <main className='main'>
-            {
-                data.map(item => {
-                    return <article className='main__sections' key={item.id}>
-                        <section className="main__sections__column-left">
-                            <div className="main__sections__icons">
-                                <img src={item.employer.logo_urls['240']} alt='Логотип компании' className='main__sections__logo' />
-                            </div>
-                            <div className="main__sections__text-left">
-                                <div className='text-left_margin-top'>
-                                    <span className='text-left_gray'>Форма работы: </span>
-                                    {item.schedule.name}
+        <div className="wrap-main">
+            <main className='main'>
+                {
+                    data.map(item => {
+                        return <article className='main__sections' key={item.id}>
+                            <section className="column-left">
+                                <div className="left__icons">
+                                    <img src={item.employer.logo_urls['240']} alt='Логотип компании' className='left__logo' />
                                 </div>
-                                <div className='text-left_margin-top'>
-                                    <span className='text-left_gray'>Компания: </span>
-                                    {item.employer.name}
+                                <div className="left-block">
+                                    <div className='left-block__text'>
+                                        <span>Форма работы: </span>
+                                        {item.schedule.name}
+                                    </div>
+                                    <div className='left-block__text'>
+                                        <span>Компания: </span>
+                                        {item.employer.name}
+                                    </div>
+                                    <div className='left-block__text'>
+                                        <span>Город: </span>
+                                        {item.area.name}
+                                    </div>
                                 </div>
-                                <div className='text-left_margin-top'>
-                                    <span className='text-left_gray'>Город: </span>
-                                    {item.area.name}
-                                </div>
-                            </div>
-                        </section>
+                            </section>
 
-                        <section className="main__sections__column-right">
-                            <h2 className="main__sections-title">
-                                {item.name}
-                            </h2>
-                            <div className="main__sections__text-body">
-                                <p className="main__sections_text-right" data-text={item.id} ref={(refs) => { nameClass.push(refs) }}>
-                                    {item.snippet.requirement}
-                                    {item.snippet.responsibility}
-                                </p>
-                                <div className="main__sections__but-right">
-                                    <button className='but-right__button' data-key={item.id} onClick={clickHandler}>more details</button>
+                            <section className="column-right">
+                                <h2 className="column-right__title">
+                                    {item.name}
+                                </h2>
+                                <div className="right-block">
+                                    <p className="right-block__text" data-text={item.id} ref={(refs) => { nameClass.push(refs) }}>
+                                        {item.snippet.requirement}
+                                        {item.snippet.responsibility}
+                                    </p>
+                                    <div className="but-wrap">
+                                        <button className='but-wrap__button' data-key={item.id} onClick={clickHandler}>more details</button>
+                                    </div>
                                 </div>
-                            </div>
-                        </section>
-                    </article>
-                })
-            }
-        </main>
+                            </section>
+                        </article>
+                    })
+                }
+            </main>
+        </div>
     );
 }
 
