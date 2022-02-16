@@ -37,13 +37,13 @@ function Main() {
         //Проходим циклом по массиву с рефами и находим текущий по ключу
         nameClass.forEach(item => {
             if (e.target.dataset.key === item.dataset.text) {
-                if (item.classList.contains('right-block__text')) {
-                    item.classList.remove('right-block__text')
-                    item.classList.add('right-block__text_close');
+                if (item.classList.contains('main__right-text')) {
+                    item.classList.remove('main__right-text')
+                    item.classList.add('main__right-text--close');
                 }
                 else {
-                    item.classList.remove('right-block__text_close')
-                    item.classList.add('right-block__text');
+                    item.classList.remove('main__right-text--close')
+                    item.classList.add('main__right-text');
                 }
             }
             else {
@@ -58,41 +58,41 @@ function Main() {
             <main className='main'>
                 {
                     data.map(item => {
-                        return <article className='main__sections' key={item.id}>
-                            <section className="column-left">
-                                <div className="left__icons">
-                                    <img src={item.employer.logo_urls['240']} alt='Логотип компании' className='left__logo' />
+                        return <article className='main__sections card' key={item.id}>
+                            <div className="main__column-left">
+                                <div className="main__icons">
+                                    <img src={item.employer.logo_urls['240']} alt='Логотип компании' className='main__logo' />
                                 </div>
-                                <div className="left-block">
-                                    <div className='left-block__text'>
+                                <div className="main__left-block">
+                                    <div className='main__left-text'>
                                         <span>Форма работы: </span>
                                         {item.schedule.name}
                                     </div>
-                                    <div className='left-block__text'>
+                                    <div className='main__left-text'>
                                         <span>Компания: </span>
                                         {item.employer.name}
                                     </div>
-                                    <div className='left-block__text'>
+                                    <div className='main__left-text'>
                                         <span>Город: </span>
                                         {item.area.name}
                                     </div>
                                 </div>
-                            </section>
+                            </div>
 
-                            <section className="column-right">
-                                <h2 className="column-right__title">
+                            <div className="main__column-right">
+                                <h2 className="main__right-title">
                                     {item.name}
                                 </h2>
-                                <div className="right-block">
-                                    <p className="right-block__text" data-text={item.id} ref={(refs) => { nameClass.push(refs) }}>
+                                <div className="main__right-block">
+                                    <p className="main__right-text" data-text={item.id} ref={(refs) => { nameClass.push(refs) }}>
                                         {item.snippet.requirement}
                                         {item.snippet.responsibility}
                                     </p>
-                                    <div className="but-wrap">
-                                        <button className='but-wrap__button' data-key={item.id} onClick={clickHandler}>more details</button>
+                                    <div className="main__but-wrap">
+                                        <button className='main__button' data-key={item.id} onClick={clickHandler}>more details</button>
                                     </div>
                                 </div>
-                            </section>
+                            </div>
                         </article>
                     })
                 }

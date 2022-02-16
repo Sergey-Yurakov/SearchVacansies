@@ -1,80 +1,51 @@
 @import "../scss/customSetings.scss";
 
-//Описываем общий контейнер
-.main {
-    display: flex;
-    flex-direction: column;
-    gap: $gs * 3;
+.card {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    border: solid 1px black;
+    padding: 16px;
+    min-height: 250px;
+}
 
-    @media (max-width: 1200px) {
-        width: 80%;
-        margin: 0 auto;
-    }
+.main {
+    display: grid;
+    grid-gap: $gs * 3;
+    padding: $gs * 2;
 
     &__sections {
-        border: solid 1px black;
-        display: flex;
-        min-height: $gs * 41;
-
-        @media (max-width: 768px) {
-            flex-direction: column;
-        }
+        display: grid;
     }
 
     &__sections:last-child {
         margin-bottom: $gs * 4;
     }
-}
 
-//Левая часть блока
-.column-left {
-    min-width: 40%;
-    margin: $gs * 3 0 $gs * 3 $gs * 3;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-
-    @media (max-width: 768px) {
-        align-items: center;
+    &__column-left {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
     }
 
-    @media (max-width: 640px) {
-        margin-bottom: 0;
-        align-items: flex-start;
-    }
-}
-
-.left__icons {
-    max-width: 35%;
-
-    @media (max-width: 640px) {
-        max-width: 50%;
-    }
-}
-
-.left__logo {
-    width: 100%;
-    object-fit: cover;
-    margin-bottom: $gs * 7;
-}
-
-.left-block {
-    font-family: Rubik;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 16px;
-    line-height: 22px;
-    color: $color-black;
-
-    @media (max-width: 768px) {
-        margin: -$gs * 2 $gs $gs * 2 $gs * 3;
+    &__icons {
+        max-width: 30%;
     }
 
-    @media (max-width: 640px) {
-        margin: -$gs * 2 $gs 0 0;
+    &__logo {
+        width: 100%;
+        object-fit: cover;
     }
 
-    &__text {
+    &__left-block {
+        font-family: Rubik;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 22px;
+        color: $color-black;
+    }
+
+    &__left-text {
         margin-top: $gs * 2;
 
         & span {
@@ -85,54 +56,38 @@
             margin: 0 auto $gs * 2;
         }
     }
-}
 
-//Правая часть блока
-.column-right {
-    @media (max-width: 768px) {
-        margin: $gs * 2 $gs $gs * 2 $gs * 3;
-    }
-
-    @media (max-width: 640px) {
-        margin: 0 $gs $gs * 2 $gs * 3;
-    }
-
-    &__title {
+    &__right-title {
+        margin-top: 0;
         color: $color-black;
-        margin: $gs * 3 0 $gs 0;
+    }
 
-        @media (max-width: 640px) {
-            font-size: 22px;
-            line-height: 35px;
-            color: $color-black;
-            margin: 0 auto $gs * 2;
+    &__right-text {
+        font-size: 16px;
+        line-height: 22px;
+        color: $color-black;
+        height: $gs * 8;
+        overflow: hidden;
+        position: relative;
+
+        &::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            height: 30%;
+            background: $color-gradient;
+        }
+
+        &--close {
+            word-wrap: break-word;
         }
     }
-}
 
-.right-block__text {
-    margin: $gs $gs * 3 $gs 0;
-    font-size: 16px;
-    line-height: 22px;
-    color: $color-black;
-    height: $gs * 8;
-    overflow: hidden;
-    position: relative;
-
-    &::after {
-        content: "";
-        position: absolute;
-        left: 0;
-        bottom: 0;
-        width: 100%;
-        height: 30%;
-        background: $color-gradient;
+    &__but-wrap {
+        text-align: center;
     }
-}
-
-//Кнопка
-.but-wrap {
-    text-align: center;
 
     &__button {
         border: none;
@@ -144,14 +99,4 @@
         background: $color-gradient;
         margin-bottom: $gs;
     }
-}
-
-//Toogle class
-.right-block__text_close {
-    margin: $gs $gs * 3 $gs 0;
-    font-size: 16px;
-    line-height: 22px;
-    color: $color-black;
-    position: relative;
-    word-wrap: break-word;
 }
