@@ -1,25 +1,29 @@
 @import "../scss/customSetings.scss";
 
-.card {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    border: solid 1px black;
-    padding: 16px;
-    min-height: 250px;
-}
-
 .main {
     display: grid;
-    grid-gap: $gs * 3;
     padding: $gs * 2;
 
     &__sections {
-        display: grid;
+        margin-top: $gs * 2;
     }
 
     &__sections:last-child {
         margin-bottom: $gs * 4;
     }
+}
+
+.main > .container {
+    display: grid;
+    gap: $gs * 3;
+}
+
+.card {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    border: solid 1px black;
+    padding: $gs * 2;
+    min-height: 250px;
 
     &__column-left {
         display: flex;
@@ -52,12 +56,12 @@
             color: $color-545454;
         }
 
-        @media (max-width: 640px) {
+        @media (max-width: $media-640) {
             margin: 0 auto $gs * 2;
         }
     }
 
-    &__right-title {
+    &__title {
         margin-top: 0;
         color: $color-black;
     }

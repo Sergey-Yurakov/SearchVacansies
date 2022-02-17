@@ -1,34 +1,64 @@
 @import "../scss/customSetings.scss";
 
-//Описываем контейнер
-.wrap-header {
-    margin: $gs * 10 auto $gs * 5;
-}
-
-//Описываем хедер
 .header {
-    @media (max-width: 1200px) {
-        width: 80%;
-        margin: 0 auto;
-    }
-
-    @media (max-width: 1024px) {
-        width: 80%;
-        margin: 0 auto;
-    }
-
     &__title {
         color: $color-black;
         margin-bottom: $gs * 10;
 
-        @media (max-width: 768px) {
+        @media (max-width: $media-1024) {
             margin: $gs * 10 0 $gs * 4;
+            padding-left: $gs * 2;
         }
 
         @media (max-width: 640px) {
             font-size: 32px;
             line-height: 38px;
         }
+    }
+
+    &__body {
+        display: grid;
+        grid-template-areas: "select input sort";
+        margin: 0;
+        padding: 0;
+
+        @media (max-width: $media-1024) {
+            padding: $gs * 2;
+            grid-template-areas:
+                "select select select"
+                "input input input"
+                "sort sort sort";
+            gap: $gs * 2;
+        }
+    }
+
+    &__input {
+        grid-area: input;
+
+        &__input-title {
+            margin-bottom: $gs;
+        }
+    }
+
+    &__select {
+        grid-area: select;
+
+        &__select-title {
+            margin-bottom: $gs;
+        }
+    }
+
+    &__sort {
+        grid-area: sort;
+        margin: $gs * 3 0 $gs * 2 0;
+
+        @media (max-width: $media-1024) {
+            margin: 0;
+        }
+    }
+
+    &__sort-text {
+        cursor: pointer;
     }
 }
 
@@ -37,24 +67,9 @@
     color: $color-a3a6a9;
 }
 
-//Тело хедера
-.body {
-    display: flex;
-    justify-content: space-between;
-    margin: 0;
-    padding: 0;
-
-    @media (max-width: 1024px) {
-        flex-direction: column;
-        gap: $gs * 2;
-    }
-    @media (max-width: 640px) {
-        margin-bottom: $gs * 4;
-    }
-}
-
-//Класс, который задает вид для инпута и селекта
-.inputs {
+.input__input {
+    padding-bottom: $gs;
+    width: $gs * 58;
     font-family: Rubik;
     font-style: normal;
     font-weight: normal;
@@ -62,82 +77,34 @@
     line-height: 26px;
     border: none;
     border-bottom: solid 1px black;
+
+    @media (max-width: $media-1024) {
+        width: 100%;
+    }
 }
 
-//Блок инпута
-.input {
+.select__select {
     padding-bottom: $gs;
+    width: $gs * 58;
+    font-family: Rubik;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 26px;
+    border: none;
+    border-bottom: solid 1px black;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    cursor: pointer;
 
-    &__title {
-        margin-bottom: $gs;
-
-        @media (max-width: 640px) {
-            margin-bottom: $gs;
-        }
+    &:not([multiple]) {
+        background-repeat: no-repeat;
+        background-position: calc(100% - 0.25em) 0.35em;
+        background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='20' height='9' viewBox='0 0 20 9' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M10 9L19.5263 0H0.473721L10 9Z' fill='black'/%3e%3c/svg%3e ");
     }
 
-    &__body input {
-        padding-bottom: $gs;
-        width: $gs * 58;
-
-        @media (max-width: 1200px) {
-            width: $gs * 40;
-        }
-
-        @media (max-width: 1024px) {
-            width: 100%;
-        }
-    }
-
-    @media (max-width: 640px) {
-        margin-top: $gs * 2;
-    }
-}
-
-//блок селекта
-.select {
-    &__title {
-        margin-bottom: $gs;
-
-        @media (max-width: 640px) {
-            margin-bottom: $gs;
-        }
-    }
-
-    &__body select {
-        padding-bottom: $gs;
-        width: $gs * 58;
-
-        -webkit-appearance: none;
-        -moz-appearance: none;
-        appearance: none;
-        cursor: pointer;
-
-        &:not([multiple]) {
-            background-repeat: no-repeat;
-            background-position: calc(100% - 0.25em) 0.35em;
-            background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='20' height='9' viewBox='0 0 20 9' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M10 9L19.5263 0H0.473721L10 9Z' fill='black'/%3e%3c/svg%3e ");
-        }
-
-        @media (max-width: 1200px) {
-            width: $gs * 40;
-        }
-
-        @media (max-width: 1024px) {
-            width: 100%;
-        }
-    }
-}
-
-//Сортировка
-.sort {
-    margin: $gs * 4 0 $gs * 2 0;
-
-    &__text {
-        cursor: pointer;
-    }
-
-    @media (max-width: 1024px) {
-        margin: 0 0 $gs * 2 0;
+    @media (max-width: $media-1024) {
+        width: 100%;
     }
 }

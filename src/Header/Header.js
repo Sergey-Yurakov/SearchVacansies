@@ -3,18 +3,18 @@ import './Header.scss';
 function Header() {
 
     return (
-        <div className="wrap-header">
-            <header className="header">
+        <header className="header">
+            <div className="container">
                 <h1 className="header__title">
                     List of vacancies
                 </h1>
-                <div className="body">
-                    <div className="select">
-                        <div className="select__title">
+                <div className="header__body">
+                    <div className="header__select">
+                        <div className="header__select-title">
                             <label htmlFor="select">Form</label>
                         </div>
-                        <div className="select__body">
-                            <select name="select" className="inputs text-grey">
+                        <div className="header__select-body">
+                            <select name="select" className="text-grey select__select">
                                 <option>Not selected</option>
                                 <option>Full time</option>
                                 <option>Half time</option>
@@ -22,20 +22,20 @@ function Header() {
                             </select>
                         </div>
                     </div>
-                    <div className="input">
-                        <div className="input__title">
+                    <div className="header__input">
+                        <div className="header__input-title">
                             <label htmlFor="input">Position</label>
                         </div>
-                        <div className="input__body">
-                            <input name="input" placeholder="Unspecified" className="inputs text-grey" />
+                        <div className="header__input-body">
+                            <input name="input" placeholder="Unspecified" className="text-grey input__input"/>
                         </div>
                     </div>
-                    <div className="sort">
-                        <div className="sort__text text-grey">Clear sorting &times;</div>
+                    <div className="header__sort">
+                        <div className="header__sort-text text-grey">Clear sorting &times;</div>
                     </div>
                 </div>
-            </header>
-        </div>
+            </div>
+        </header>
     );
 }
 
