@@ -1,21 +1,14 @@
 @import "../scss/customSetings.scss";
 
 .main {
-    display: grid;
-    padding: $gs * 2;
-
-    &__sections {
-        margin-top: $gs * 2;
+    &__card {
+        display: grid;
+        grid-gap: $gs * 3;
     }
 
     &__sections:last-child {
         margin-bottom: $gs * 4;
     }
-}
-
-.main > .container {
-    display: grid;
-    gap: $gs * 3;
 }
 
 .card {
