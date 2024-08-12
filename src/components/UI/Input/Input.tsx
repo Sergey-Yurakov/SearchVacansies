@@ -1,8 +1,15 @@
-// TODO: поправить импорт
-// @ts-ignore
+import { ChangeEvent } from 'react';
+
 import cl from './Input.module.scss';
 
-const Input = ({ label, placeholder, value, setValue }) => {
+type InputProps = {
+    label: string;
+    placeholder: string;
+    value: string;
+    onChange: (event: ChangeEvent<HTMLInputElement>) => void;
+};
+
+const Input = ({ label, placeholder, value, onChange }: InputProps) => {
     return (
         <div className={cl.input}>
             <div className={cl.input__label}>
@@ -14,7 +21,7 @@ const Input = ({ label, placeholder, value, setValue }) => {
                     placeholder={placeholder}
                     className={cl.input__body__input}
                     value={value}
-                    onChange={e => setValue(e.target.value)}
+                    onChange={onChange}
                 />
             </div>
         </div>

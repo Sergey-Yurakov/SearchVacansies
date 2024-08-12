@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { ChangeEvent, useEffect, useState } from 'react';
 
 import Input from '../UI/Input/Input';
 import Select from '../UI/Select/Select';
@@ -24,23 +24,31 @@ const optionsSelect = [
 ];
 
 // todo: переписать потом селект и инпут через стейты, а не через локалСторадж!
-function Header() {
-    const [select, setSelect] = useState(localStorage.getItem('select') || 'fullDay');
-    const [input, setInput] = useState(localStorage.getItem('input') || 'js');
+export const Header = () => {
+    const [workSchedule, setWorkSchedule] = useState(localStorage.getItem('select') || 'fullDay');
+    const [position, setPosition] = useState(localStorage.getItem('input') || 'js');
 
     useEffect(() => {
-        if (input) {
-            localStorage.setItem('input', input);
+        if (position) {
+            localStorage.setItem('input', position);
         }
 
-        if (select) {
-            localStorage.setItem('select', select);
+        if (workSchedule) {
+            localStorage.setItem('select', workSchedule);
         }
-    }, [input, select]);
+    }, [position, workSchedule]);
 
     const resetFilter = () => {
-        setSelect('fullDay');
-        setInput('');
+        setWorkSchedule('fullDay');
+        setPosition('');
+    };
+
+    const handleChangePosition = (event: ChangeEvent<HTMLInputElement>) => {
+        setPosition(event.target.value);
+    };
+
+    const handleChangeWorkSchedule = (event: ChangeEvent<HTMLSelectElement>) => {
+        setWorkSchedule(event.target.value);
     };
 
     return (
@@ -52,10 +60,15 @@ function Header() {
                         label="Form"
                         defaultValue="Sort by"
                         options={optionsSelect}
-                        value={select}
-                        setValue={setSelect}
+                        value={workSchedule}
+                        onChange={handleChangeWorkSchedule}
                     />
-                    <Input label="Position" placeholder="Unspecified" value={input} setValue={setInput} />
+                    <Input
+                        label="Position"
+                        placeholder="Unspecified"
+                        value={position}
+                        onChange={handleChangePosition}
+                    />
 
                     <div className="header__sort">
                         <button className="header__sort-text" onClick={resetFilter}>
@@ -66,6 +79,4 @@ function Header() {
             </div>
         </header>
     );
-}
-
-export default Header;
+};

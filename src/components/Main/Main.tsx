@@ -6,7 +6,7 @@ import Loader from '../Loader/Loader';
 import VacanciesCard from '../VacanciesCard/VacanciesCard';
 import './Main.scss';
 
-const Main = () => {
+export const Main = () => {
     // const { data, fetchNextPage, hasNextPage, isSuccess, isLoading, error, isFetching } = useVacanciesData({
     //     schedule: localStorage.getItem('select'),
     //     textUrl: localStorage.getItem('input'),
@@ -46,5 +46,3 @@ const Main = () => {
         </main>
     );
 };
-
-export default Main;

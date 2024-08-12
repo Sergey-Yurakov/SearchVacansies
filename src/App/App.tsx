@@ -1,12 +1,10 @@
-import Header from '../components/Header/Header';
-import Main from '../components/Main/Main';
+import { Vacancies } from '../components/Vacancies/Vacancies';
 import './App.scss';
 
 export const App = () => {
     return (
         <div className="App">
-            <Header />
-            <Main />
+            <Vacancies />
         </div>
     );
 };

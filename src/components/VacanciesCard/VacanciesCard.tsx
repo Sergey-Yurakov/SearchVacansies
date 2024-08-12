@@ -2,11 +2,17 @@
 // import NoImage from '../../images/noimage.png;
 import VacanciesItem from '../VacanciesItem/VacanciesItem';
 
-const VacanciesCard = ({ data }) => {
+type VacanciesCardProps = {
+    data: {
+        pages: any[];
+    };
+};
+
+const VacanciesCard = ({ data }: VacanciesCardProps) => {
     return (
         <>
             {data?.pages?.map(i =>
-                i?.items.map(({ id, employer, employment, area, name, snippet }) => {
+                i?.items.map(({ id, employer, employment, area, name, snippet }: any) => {
                     const textVacancies = `${snippet.requirement} ${snippet.responsibility}`.replace('undefined', '');
 
                     return (

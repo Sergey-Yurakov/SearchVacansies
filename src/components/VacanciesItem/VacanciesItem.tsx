@@ -3,7 +3,7 @@ import { useInView } from 'react-intersection-observer';
 
 import cl from './VacanciesItem.module.scss';
 
-const VacanciesItem = ({ id, employer, employment, area, name, textVacancies, companyLogo }) => {
+const VacanciesItem = ({ id, employer, employment, area, name, textVacancies, companyLogo }: any) => {
     const [isOpen, setIsOpen] = useState(false);
 
     const { ref, inView } = useInView({

@@ -1,20 +1,28 @@
-// TODO: поправить импорт
-// @ts-ignore
+import { ChangeEvent } from 'react';
+
 import cl from './Select.module.scss';
 
-const Select = ({ defaultValue, options, label, value, setValue }) => {
+export type OptionsSelect = {
+    label: string;
+    value: string;
+};
+
+type SelectProps = {
+    defaultValue: string;
+    options: OptionsSelect[];
+    label: string;
+    value: string;
+    onChange: (event: ChangeEvent<HTMLSelectElement>) => void;
+};
+
+const Select = ({ defaultValue, options, label, value, onChange }: SelectProps) => {
     return (
         <div className={cl.select}>
             <div className={cl.select__label}>
                 <label htmlFor="select">{label}</label>
             </div>
             <div className={cl.select__body}>
-                <select
-                    name="select"
-                    className={cl.select__body__select}
-                    value={value}
-                    onChange={e => setValue(e.target.value)}
-                >
+                <select name="select" className={cl.select__body__select} value={value} onChange={onChange}>
                     <option value="" disabled>
                         {defaultValue}
                     </option>
