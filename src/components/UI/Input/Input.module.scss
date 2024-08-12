@@ -1,0 +1,31 @@
+// TODO: добавить alias
+@import '../../../scss/customSetings';
+
+.input {
+    &__label {
+        margin-bottom: $gs;
+    }
+    &__body {
+        display: flex;
+        &__input {
+            color: $color-a3a6a9;
+            padding-bottom: $gs;
+            // width: $gs * 58;
+            width: 100%;
+            font-family: Rubik;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 16px;
+            line-height: 26px;
+            border: none;
+            border-bottom: solid 1px black;
+
+            @media (max-width: $media-1024) {
+                width: 100%;
+            }
+            &::placeholder {
+                color: $color-a3a6a9;
+            }
+        }
+    }
+}

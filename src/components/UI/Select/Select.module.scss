@@ -1,0 +1,37 @@
+// TODO: добавить alias
+@import '../../../scss/customSetings';
+
+.select {
+    &__label {
+        margin-bottom: $gs;
+    }
+    &__body {
+        &__select {
+            color: $color-a3a6a9;
+            padding-bottom: $gs + 1;
+            // width: $gs * 58;
+            width: 100%;
+            font-family: Rubik;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 16px;
+            line-height: 26px;
+            border: none;
+            border-bottom: solid 1px black;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            cursor: pointer;
+
+            &:not([multiple]) {
+                background-repeat: no-repeat;
+                background-position: calc(100% - 0.25em) 0.35em;
+                background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='20' height='9' viewBox='0 0 20 9' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M10 9L19.5263 0H0.473721L10 9Z' fill='black'/%3e%3c/svg%3e ");
+            }
+
+            @media (max-width: $media-1024) {
+                width: 100%;
+            }
+        }
+    }
+}

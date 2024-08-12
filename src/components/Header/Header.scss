@@ -1,0 +1,110 @@
+// TODO: добавить alias
+@import '../../scss/customSetings';
+
+.header {
+    &__title {
+        color: $color-black;
+        margin-bottom: $gs * 10;
+
+        @media (max-width: $media-1024) {
+            margin: $gs * 10 0 $gs * 4;
+        }
+
+        @media (max-width: 640px) {
+            font-size: 32px;
+            line-height: 38px;
+        }
+    }
+
+    &__body {
+        display: grid;
+        grid-template-columns: 1fr 1fr 200px;
+        // margin: 0;
+        // padding: 0;
+        gap: $gs * 5;
+
+        @media (max-width: $media-1024) {
+            grid-template-columns: 1fr;
+            gap: $gs * 2;
+        }
+    }
+
+    // &__input-title {
+    //     margin-bottom: $gs;
+    // }
+
+    // &__select-title {
+    //     margin-bottom: $gs;
+    // }
+
+    &__sort {
+        // margin: $gs * 3 0 $gs * 2 0;
+        margin-top: 20px;
+
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+
+        @media (max-width: $media-1024) {
+            margin: 0;
+        }
+    }
+
+    &__sort-text {
+        cursor: pointer;
+        border: none;
+        background: white;
+        color: $color-a3a6a9;
+
+        & span {
+            margin-left: $gs;
+        }
+    }
+}
+
+// .text-grey,
+// .text-grey::placeholder {
+//     color: $color-a3a6a9;
+// }
+
+// .input__input {
+//     padding-bottom: $gs;
+//     width: $gs * 58;
+//     font-family: Rubik;
+//     font-style: normal;
+//     font-weight: normal;
+//     font-size: 16px;
+//     line-height: 26px;
+//     border: none;
+//     border-bottom: solid 1px black;
+
+//     @media (max-width: $media-1024) {
+//         width: 100%;
+//     }
+// }
+
+// .select__select {
+//     padding-bottom: $gs;
+//     width: $gs * 58;
+//     font-family: Rubik;
+//     font-style: normal;
+//     font-weight: normal;
+//     font-size: 16px;
+//     line-height: 26px;
+//     border: none;
+//     border-bottom: solid 1px black;
+//     -webkit-appearance: none;
+//     -moz-appearance: none;
+//     appearance: none;
+//     cursor: pointer;
+
+//     &:not([multiple]) {
+//         background-repeat: no-repeat;
+//         background-position: calc(100% - 0.25em) 0.35em;
+//         background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='20' height='9' viewBox='0 0 20 9' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M10 9L19.5263 0H0.473721L10 9Z' fill='black'/%3e%3c/svg%3e ");
+//     }
+
+//     @media (max-width: $media-1024) {
+//         width: 100%;
+//     }
+// }

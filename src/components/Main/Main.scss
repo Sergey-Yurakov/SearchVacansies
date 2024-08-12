@@ -1,4 +1,4 @@
-@import "../scss/customSetings.scss";
+@import '../../scss/customSetings';
 
 .main {
     &__card {
@@ -8,6 +8,10 @@
 
     &__sections:last-child {
         margin-bottom: $gs * 4;
+    }
+
+    &__skeleton {
+        height: 20px;
     }
 }
 
@@ -68,7 +72,7 @@
         position: relative;
 
         &::after {
-            content: "";
+            content: '';
             position: absolute;
             left: 0;
             bottom: 0;
